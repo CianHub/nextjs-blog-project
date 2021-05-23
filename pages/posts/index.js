@@ -1,5 +1,5 @@
 import React from 'react';
-import { AllPosts } from './all-posts';
+import { AllPosts } from '../../components/posts/all-posts.js';
 
 const DUMMY_POSTS = [
   {
