@@ -14,8 +14,6 @@ const PostItem = (props) => {
 
   const imagePath = `/images/posts/${post.slug}/${post.image}`;
 
-  console.log(imagePath);
-
   return (
     <>
       <li className={classes.post}>
@@ -23,6 +21,7 @@ const PostItem = (props) => {
           <a>
             <div className={classes.image}>
               <Image
+                layout="responsive"
                 src={imagePath}
                 alt={post.title}
                 width={300}
