@@ -4,20 +4,21 @@ import Link from 'next/link';
 import classes from '../../styles/main-navigation.module.css';
 export const Nav = () => {
   return (
-    <header>
+    <header className={classes.header}>
       <Link href="/">
         <a>
           <Logo />
         </a>
       </Link>
-      <nav>
+      <ul>
+        {' '}
         <li>
           <Link href="/posts">Posts</Link>
         </li>
         <li>
           <Link href="/contact">Contact</Link>
         </li>
-      </nav>
+      </ul>
     </header>
   );
 };
