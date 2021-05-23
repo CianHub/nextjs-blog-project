@@ -1,7 +1,8 @@
 import React from 'react';
+import { PostContent } from '../../components/posts/post-details/PostContent';
 
 const Post = () => {
-  return <div></div>;
+  return <PostContent />;
 };
 
 export default Post;
