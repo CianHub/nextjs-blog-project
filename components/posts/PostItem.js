@@ -10,12 +10,14 @@ export const PostItem = ({ post }) => {
     year: 'numeric',
   });
 
+  const imagePath = `/images/posts/${post.slug}`;
+
   return (
     <li className={classes.post}>
       <Link href={post.link}>
         <a>
           <div className={classes.image}>
-            <Image />
+            <Image src={imagePath} alt={post.title} width={300} height={200} />
           </div>
           <div className={classes.content}>
             <h3>{post.title}</h3>
