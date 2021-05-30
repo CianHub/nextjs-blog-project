@@ -3,16 +3,14 @@ import classes from '../../styles/post-item.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const PostItem = (props) => {
-  const post = props.post;
-
-  const formattedDate = new Date(post.date).toLocaleDateString('en-US', {
+const PostItem = ({ post }) => {
+  const formattedDate = new Date(post.data.date).toLocaleDateString('en-US', {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
   });
 
-  const imagePath = `/images/posts/${post.slug}/${post.image}`;
+  const imagePath = `/images/posts/${post.slug}/${post.data.image}`;
 
   return (
     <>
@@ -23,15 +21,15 @@ const PostItem = (props) => {
               <Image
                 layout="responsive"
                 src={imagePath}
-                alt={post.title}
+                alt={post.data.title}
                 width={300}
                 height={200}
               />
             </div>
             <div className={classes.content}>
-              <h3>{post.title}</h3>
+              <h3>{post.data.title}</h3>
               <time>{formattedDate}</time>
-              <p>{post.excerpt}</p>
+              <p>{post.data.excerpt}</p>
             </div>
           </a>
         </Link>

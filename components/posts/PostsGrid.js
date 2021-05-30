@@ -1,9 +1,7 @@
 import React from 'react';
 import classes from '../../styles/posts-grid.module.css';
 import PostItem from './PostItem';
-export const PostsGrid = (props) => {
-  const { posts = [] } = props;
-
+export const PostsGrid = ({ posts }) => {
   return (
     <ul className={classes.grid}>
       {posts.map((post) => (

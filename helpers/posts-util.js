@@ -14,7 +14,19 @@ const getPostData = (fileName) => {
   return { data, content, slug };
 };
 
-const getAllPosts = () => {
+export const getAllPosts = () => {
   const postFileNames = fs.readdirSync(postsDirectory);
-  return postFileNames.map((fileName) => getPostData(fileName));
+  const postFileData = postFileNames.map((fileName) => getPostData(fileName));
+
+  const sortedPostFileData = postFileData.sort((postA, postB) => {
+    return postA.data.date > postB.data.date ? -1 : 1;
+  });
+
+  return sortedPostFileData;
+};
+
+export const getFeaturedPosts = () => {
+  const posts = getAllPosts().filter((post) => post.data.isFeatured);
+
+  return posts;
 };
