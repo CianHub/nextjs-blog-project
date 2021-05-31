@@ -19,6 +19,7 @@ function handler(req, res) {
       name,
       message,
     };
+    res.status(201).json({ message: 'Succesfully stored message!', message });
   }
 }
 
