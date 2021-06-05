@@ -4,13 +4,11 @@ import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism/atom-dark';
 import classes from '../../../styles/post-content.module.css';
 import { PostHeader } from './PostHeader';
-import js from 'react-syntax-highlighter/dist/cjs/languages/hljs/javascript';
-import css from 'react-syntax-highlighter/dist/cjs/languages/hljs/css';
-import html from 'react-syntax-highlighter/dist/cjs/languages/hljs/html';
+import js from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript';
+import css from 'react-syntax-highlighter/dist/cjs/languages/prism/css';
 
 SyntaxHighlighter.registerLanguage('js', js);
 SyntaxHighlighter.registerLanguage('css', css);
-SyntaxHighlighter.registerLanguage('html', html);
 
 export const PostContent = ({ post }) => {
   const imagePath = `/images/posts/${post.slug}/${post.data.image}`;
