@@ -45,6 +45,10 @@ export const ContactForm = () => {
       });
 
       setRequestStatus('success');
+
+      setEnteredEmail('');
+      setEnteredMessage('');
+      setEnteredName('');
     } catch (e) {
       setRequestStatus('error');
       setRequestError(err.message);
